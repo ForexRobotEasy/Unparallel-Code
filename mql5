@@ -1,0 +1,135 @@
+
+//+------------------------------------------------------------------+
+//|                                             Unparallel Code.mq5 |
+//|                                 Copyright © 2021, Forex Robot Easy Team |
+//|                                              https://www.forexroboteasy.com |
+//+------------------------------------------------------------------+
+
+// Define global variables
+input double StopLossFirst = 50.0; // Stop loss value for the first position
+input double StopLossRest = 30.0; // Stop loss value for the rest of the positions
+input double TakeProfit1 = 100.0; // Take profit value for strategy 1
+input double TakeProfit2 = 200.0; // Take profit value for strategy 2
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Initialize necessary indicators and conditions
+
+    return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Perform necessary cleanup and data saving
+
+}
+
+//+------------------------------------------------------------------+
+//| Expert start function                                            |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Scan the market and analyze the Forex market using 97 different indicators
+    // Implement complex array of 97 conditions based on the indicators
+
+    // Check if all 97 conditions are met
+    bool allConditionsMet = CheckAllConditions();
+
+    if (allConditionsMet)
+    {
+        // Open a new trading position
+        bool positionOpened = OpenPosition();
+
+        if (positionOpened)
+        {
+            // Determine the minimum distance between trades based on candle formations
+            double minDistance = CalculateMinDistance();
+
+            // Set stop loss values for the first position and the rest
+            SetStopLoss(minDistance);
+
+            // Set take profit values based on the selected strategy
+            SetTakeProfit();
+
+            // Continue trading after the stop loss is hit
+            ContinueTrading();
+        }
+    }
+}
+
+//+------------------------------------------------------------------+
+//| Check if all 97 conditions are met                               |
+//+------------------------------------------------------------------+
+bool CheckAllConditions()
+{
+    // Implement logic to check all 97 conditions
+
+    return true; // Placeholder for actual condition checking logic
+}
+
+//+------------------------------------------------------------------+
+//| Open a new trading position                                      |
+//+------------------------------------------------------------------+
+bool OpenPosition()
+{
+    // Implement logic to open a new trading position
+
+    return true; // Placeholder for actual position opening logic
+}
+
+//+------------------------------------------------------------------+
+//| Calculate the minimum distance between trades based on candles   |
+//+------------------------------------------------------------------+
+double CalculateMinDistance()
+{
+    // Implement logic to calculate the minimum distance between trades based on candles
+
+    return 10.0; // Placeholder for actual minimum distance calculation logic
+}
+
+//+------------------------------------------------------------------+
+//| Set stop loss values for the first position and the rest          |
+//+------------------------------------------------------------------+
+void SetStopLoss(const double minDistance)
+{
+    // Set stop loss value for the first position
+    double stopLossFirst = StopLossFirst;
+
+    // Set stop loss value for the rest of the positions
+    double stopLossRest = StopLossRest;
+
+    // Implement logic to adjust stop loss for the rest of the positions if necessary
+
+    // Print stop loss values for debugging
+    Print('Stop Loss (First): ', stopLossFirst);
+    Print('Stop Loss (Rest): ', stopLossRest);
+}
+
+//+------------------------------------------------------------------+
+//| Set take profit values based on the selected strategy             |
+//+------------------------------------------------------------------+
+void SetTakeProfit()
+{
+    // Implement logic to set take profit values based on the selected strategy
+
+    // Print take profit values for debugging
+    Print('Take Profit 1: ', TakeProfit1);
+    Print('Take Profit 2: ', TakeProfit2);
+}
+
+//+------------------------------------------------------------------+
+//| Continue trading after the stop loss is hit                      |
+//+------------------------------------------------------------------+
+void ContinueTrading()
+{
+    // Implement logic to continue trading after the stop loss is hit
+
+    // Print message for debugging
+    Print('Continue trading after stop loss is hit');
+}
